@@ -65,6 +65,7 @@
         .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 34px rgba(108, 60, 225, 0.6); }
         .btn-outline { background: rgba(255, 255, 255, 0.03); color: var(--text); border: 1.5px solid var(--border); }
         .btn-outline:hover { border-color: var(--primary); background: rgba(108, 60, 225, 0.12); }
+        .exit-btn { border-color: rgba(239, 68, 68, 0.4); color: #EF4444; background: rgba(239, 68, 68, 0.06); }
         .btn-large { padding: 0.9rem 1.9rem; font-size: 0.95rem; border-radius: 14px; }
 
         .test-view { max-width: 820px; margin: 0 auto; padding: 5.5rem 1.25rem 10rem; position: relative; z-index: 2; }

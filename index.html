@@ -238,6 +238,17 @@
             box-shadow: 0 8px 30px rgba(255,255,255,0.2);
         }
 
+        .btn-journey {
+            background: var(--gradient-3);
+            color: white;
+            box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4);
+        }
+
+        .btn-journey:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(249, 115, 22, 0.6);
+        }
+
         .hamburger {
             display: none;
             flex-direction: column;
@@ -1191,22 +1202,105 @@
         }
 
         .price-card.featured {
-            border-color: var(--primary);
-            box-shadow: var(--glow-purple);
+            border-color: rgba(249, 115, 22, 0.45);
+            box-shadow: 0 20px 60px rgba(108, 60, 225, 0.25), var(--glow-purple);
+            text-align: center;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 50% 0%, rgba(249, 115, 22, 0.12), transparent 60%),
+                linear-gradient(180deg, rgba(108, 60, 225, 0.08), transparent 45%),
+                var(--bg-card);
+        }
+        .price-card.featured::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #10B981, #3B82F6, #8B5CF6, #F97316, #EF4444);
         }
 
-        .price-card.featured::before {
-            content: 'Most Popular';
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--gradient-1);
+        .bc-ribbon {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin: -0.3rem auto 1rem;
+            padding: 0.3rem 1.1rem;
+            background: var(--gradient-3);
             color: white;
-            padding: 0.3rem 1rem;
-            border-radius: 20px;
+            border-radius: 50px;
             font-size: 0.75rem;
-            font-weight: 600;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            box-shadow: 0 6px 18px rgba(249, 115, 22, 0.35);
+        }
+        .bc-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1rem;
+            border-radius: 18px;
+            background: var(--gradient-1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: var(--glow-purple);
+        }
+        .price-card.featured h3 {
+            font-size: 1.45rem;
+            background: linear-gradient(135deg, #F97316, #EF4444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .price-card.featured .bc-sub {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        .price-card.featured .price-amount {
+            font-size: 2.6rem;
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.4rem;
+            margin: 0.8rem 0;
+        }
+        .bc-currency {
+            font-size: 1.1rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-light), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0.85;
+        }
+        .bc-per {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        .price-card.featured .price-features {
+            text-align: left;
+            background: var(--bg-card-hover);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.2rem 1.3rem;
+        }
+        .price-card.featured .price-features li { text-align: left; }
+        .price-card.featured .price-features li .check {
+            width: 22px;
+            height: 22px;
+            min-width: 22px;
+            border-radius: 50%;
+            background: rgba(16, 185, 129, 0.15);
+            color: #10B981;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 800;
         }
 
         .price-card:hover {
@@ -1230,6 +1324,10 @@
             font-size: 1rem;
             font-weight: 400;
             color: var(--text-dim);
+        }
+        .price-card.featured .price-amount span {
+            font-size: 1rem;
+            font-weight: 500;
         }
 
         .price-features {
@@ -1572,7 +1670,7 @@
         <li><a href="#journey">The Journey</a></li>
         <li><a href="#features">Features</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="level.html">AI Assistant</a></li>
+        <li><a href="#ai">AI Assistant</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#cta" class="btn btn-primary" style="padding: 0.5rem 1.2rem;">Get Started</a></li>
     </ul>
@@ -1627,6 +1725,7 @@
         </p>
         <div class="hero-buttons">
             <a href="test.html" class="btn btn-primary btn-large">Take the Free Level Test</a>
+            <a href="journey.html" class="btn btn-journey btn-large">Start Your Journey ➜</a>
             <a href="#journey" class="btn btn-outline btn-large">See How It Works</a>
         </div>
         <div class="hero-social">
@@ -2108,19 +2207,19 @@
                 <a href="#cta" class="btn btn-outline" style="width:100%;justify-content:center;">Get Started Free</a>
             </div> -->
              <div class="price-card featured reveal">
+                <div class="bc-ribbon">🔥 Most Popular</div>
+                <div class="bc-icon">💼</div>
                 <h3>Career English Bootcamp</h3>
-                <p style="color:var(--text-dim);font-size:0.9rem;">4 weeks of focused, career-driven English training.</p>
-                <div class="price-amount" >999 EGP </div>
-                <ul class="price-features" style="text-align: center;">
-                    <li style="text-align: center;"><span class="check">✓</span> Weekly live sessions</li>
+                <p class="bc-sub">4 weeks of focused, career-driven English training.</p>
+                <div class="price-amount" ><span class="bc-currency">EGP</span> 999 <span class="bc-per">/ 4 weeks</span></div>
+                <ul class="price-features">
+                    <li><span class="check">✓</span> Weekly live sessions</li>
                     <li><span class="check">✓</span> Practice materials & resources</li>
                     <li><span class="check">✓</span> Weekly assessments</li>
-                    <li><span class="check">✓</span>Final assessment & Chango Score</li>
+                    <li><span class="check">✓</span> Final assessment & Chango Score</li>
                     <li><span class="check">✓</span> Career profile creation</li>
-                    <!-- <li><span class="check">✓</span> Career tools</li>
-                    <li><span class="check">✓</span> Portfolio builder</li> -->
                 </ul>
-                <a href="https://chat.whatsapp.com/ImsdjravuSIAfRxk9TRonB" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%;justify-content:center;">Start Now</a>
+                <a href="https://chat.whatsapp.com/ImsdjravuSIAfRxk9TRonB" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%;justify-content:center;">Start Now 🚀</a>
             </div>
            <!-- <div class="price-card reveal">
                 <h3>Enterprise</h3>
@@ -2150,6 +2249,7 @@
         <p>Stop jumping between platforms. Start your integrated journey from learning to earning with Chango.</p>
         <div class="cta-buttons">
             <a href="https://chat.whatsapp.com/ImsdjravuSIAfRxk9TRonB" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">Get Started Free</a>
+                        <a href="journey.html" class="btn btn-journey btn-large">Start Your Journey ➜</a>
             <a href="#pricing" class="btn btn-outline btn-large">Book a Demo</a>
         </div>
     </div>

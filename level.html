@@ -216,6 +216,7 @@
         .level-card {
             background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px;
             padding: 2rem; transition: all 0.4s ease; position: relative; overflow: hidden;
+            text-decoration: none; display: flex; flex-direction: column; color: inherit;
         }
         .level-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gradient-1); opacity: 0; transition: opacity 0.3s; }
         .level-card:hover { border-color: var(--primary); transform: translateY(-6px); box-shadow: var(--glow-purple); }
@@ -231,8 +232,32 @@
         .level-card:nth-child(4) .level-badge { background: rgba(249, 115, 22, 0.15); color: var(--accent); }
         .level-card:nth-child(5) .level-badge { background: rgba(236, 72, 153, 0.15); color: #EC4899; }
         .level-card:nth-child(6) .level-badge { background: rgba(239, 68, 68, 0.15); color: #EF4444; }
+        .level-card:nth-child(1) .level-more { color: #10B981; }
+        .level-card:nth-child(2) .level-more { color: #3B82F6; }
+        .level-card:nth-child(3) .level-more { color: var(--primary-light); }
+        .level-card:nth-child(4) .level-more { color: var(--accent); }
+        .level-card:nth-child(5) .level-more { color: #EC4899; }
+        .level-card:nth-child(6) .level-more { color: #EF4444; }
         .level-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.6rem; }
-        .level-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; }
+        .level-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; flex-grow: 1; }
+        .level-more {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            margin-top: 1rem; font-size: 0.82rem; font-weight: 700;
+            letter-spacing: 0.3px; transition: gap 0.3s ease;
+        }
+        .level-card:hover .level-more { gap: 0.7rem; }
+        .level-focus {
+            list-style: none; margin: 0.9rem 0 0; padding: 0.9rem 0 0;
+            border-top: 1px dashed var(--border); display: grid; gap: 0.45rem;
+        }
+        .level-focus li { position: relative; padding-left: 1.2rem; font-size: 0.8rem; color: var(--text-dim); line-height: 1.5; }
+        .level-focus li::before { content: '\203A'; position: absolute; left: 2px; top: -1px; font-size: 1.1rem; font-weight: 800; }
+        .level-card:nth-child(1) .level-focus li::before { color: #10B981; }
+        .level-card:nth-child(2) .level-focus li::before { color: #3B82F6; }
+        .level-card:nth-child(3) .level-focus li::before { color: var(--primary-light); }
+        .level-card:nth-child(4) .level-focus li::before { color: var(--accent); }
+        .level-card:nth-child(5) .level-focus li::before { color: #EC4899; }
+        .level-card:nth-child(6) .level-focus li::before { color: #EF4444; }
 
         /* HOW */
         .how { background: var(--bg-dark); }
@@ -385,36 +410,72 @@
             <p class="section-desc" style="margin:0 auto;">Six international levels that describe how well you can understand and use English.</p>
         </div>
         <div class="levels-grid">
-            <div class="level-card reveal">
+            <a href="a1.html" class="level-card reveal">
                 <div class="level-badge">A1</div>
                 <h3>Beginner</h3>
                 <p>Understand and use familiar everyday expressions and basic phrases. Introduce yourself, ask simple questions, and answer basic needs.</p>
-            </div>
-            <div class="level-card reveal">
+                <ul class="level-focus">
+                    <li>Greetings, introductions &amp; everyday phrases</li>
+                    <li>Numbers, days, family &amp; common objects</li>
+                    <li>Simple questions and slow, clear speech</li>
+                </ul>
+                <span class="level-more">Explore A1 →</span>
+            </a>
+            <a href="a2.html" class="level-card reveal">
                 <div class="level-badge">A2</div>
                 <h3>Elementary</h3>
                 <p>Handle simple, routine tasks and exchanges. Describe your background, family, and immediate surroundings in simple sentences.</p>
-            </div>
-            <div class="level-card reveal">
+                <ul class="level-focus">
+                    <li>Everyday routines: shopping, travel, work</li>
+                    <li>Describe background, family &amp; surroundings</li>
+                    <li>Clear, standard speech on familiar topics</li>
+                </ul>
+                <span class="level-more">Explore A2 →</span>
+            </a>
+            <a href="coming-soon.html?type=B1" class="level-card reveal">
                 <div class="level-badge">B1</div>
                 <h3>Intermediate</h3>
                 <p>Deal with most situations while travelling. Describe experiences, opinions, and plans, and follow clear, standard speech.</p>
-            </div>
-            <div class="level-card reveal">
+                <ul class="level-focus">
+                    <li>Travel &amp; real-world situations with ease</li>
+                    <li>Describe experiences, opinions &amp; plans</li>
+                    <li>Follow clear, standard speech</li>
+                </ul>
+                <span class="level-more">Coming Soon →</span>
+            </a>
+            <a href="coming-soon.html?type=B2" class="level-card reveal">
                 <div class="level-badge">B2</div>
                 <h3>Upper Intermediate</h3>
                 <p>Understand complex text on concrete and abstract topics. Interact with native speakers fluently and spontaneously.</p>
-            </div>
-            <div class="level-card reveal">
+                <ul class="level-focus">
+                    <li>Understand complex texts &amp; discussions</li>
+                    <li>Interact naturally &amp; fluently with natives</li>
+                    <li>Argue clearly on familiar subjects</li>
+                </ul>
+                <span class="level-more">Coming Soon →</span>
+            </a>
+            <a href="coming-soon.html?type=C1" class="level-card reveal">
                 <div class="level-badge">C1</div>
                 <h3>Advanced</h3>
                 <p>Express ideas fluently and spontaneously without obvious searching. Use language flexibly for social, academic, and professional purposes.</p>
-            </div>
-            <div class="level-card reveal">
+                <ul class="level-focus">
+                    <li>Fluent, flexible academic &amp; professional English</li>
+                    <li>Demanding texts &amp; implicit meaning</li>
+                    <li>Precise, idiomatic expression</li>
+                </ul>
+                <span class="level-more">Coming Soon →</span>
+            </a>
+            <a href="coming-soon.html?type=C2" class="level-card reveal">
                 <div class="level-badge">C2</div>
                 <h3>Proficient</h3>
                 <p>Understand virtually everything heard or read. Summarize information from different sources and express yourself with precision.</p>
-            </div>
+                <ul class="level-focus">
+                    <li>Understand virtually everything heard or read</li>
+                    <li>Summarize information from many sources</li>
+                    <li>Total precision in every register</li>
+                </ul>
+                <span class="level-more">Coming Soon →</span>
+            </a>
         </div>
     </div>
 </section>
@@ -523,6 +584,7 @@
         });
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
+    setTimeout(() => document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible')), 1500);
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {

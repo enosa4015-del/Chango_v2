@@ -103,8 +103,8 @@
             <div class="mistakes-list" id="mistakesList"></div>
         </div>
         <div class="result-actions">
-            <button class="btn btn-primary btn-large" onclick="location.href='next.html'">Continue &amp; See What's Next</button>
-            <button class="btn btn-outline btn-large" onclick="openLevelModal()">What Is This Level?</button>
+            <button class="btn btn-primary btn-large" onclick="location.href=levelPage(result.level)">Continue &amp; See What's Next</button>
+            <button class="btn btn-outline btn-large" onclick="location.href=levelPage(result.level)">What Is This Level?</button>
             <button class="btn btn-outline btn-large" onclick="location.href='test.html'">Retake Test</button>
         </div>
         <p class="result-note">AI estimate of your current CEFR level. For an official certificate, join the Chango English Bootcamp.</p>
@@ -129,6 +129,7 @@
         <div class="result-actions" style="margin-top:1.2rem;">
             <button class="btn btn-primary btn-large" onclick="closeLevelModal()">Got It</button>
             <a href="level.html" class="btn btn-outline btn-large">See All Levels</a>
+            <a href="level-detail.html" class="btn btn-outline btn-large" id="lmFullGuide">Open Full Level Guide</a>
         </div>
     </div>
 </div>
@@ -255,11 +256,18 @@
         document.getElementById('mistakesList').classList.toggle('open');
     }
 
+    function levelPage(l) {
+        if (l === 'A1') return 'a1.html';
+        if (l === 'A2') return 'a2.html';
+        return 'level-detail.html?level=' + l;
+    }
+
     function openLevelModal() {
         const info = LEVEL_INFO[result.level];
         document.getElementById('lmBadge').textContent = 'CEFR ' + result.level;
         document.getElementById('lmBadge').style.color = info.ring;
         document.getElementById('lmBadge').style.borderColor = info.ring;
+        document.getElementById('lmFullGuide').href = levelPage(result.level);
         document.getElementById('lmTitle').innerHTML = info.title + ' Level';
         document.getElementById('lmDesc').textContent = info.desc;
 
@@ -292,7 +300,7 @@
         document.getElementById('levelModal').classList.remove('show');
     }
 
-    renderResult();
+    if (result && result.level) renderResult();
 </script>
 
 </body>
