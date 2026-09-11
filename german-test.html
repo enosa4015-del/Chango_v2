@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI English Level Test | Chango</title>
+    <title>KI-Deutsch-Stufentest | Chango</title>
     <link rel="icon" href="images/Logo.jpg" type="image/x-icon">
     <link rel="stylesheet" href="app.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,8 +19,8 @@
     </a>
     <div class="nav-right">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="level.html" class="nav-link">Levels</a>
-        <a href="test.html" class="nav-link active">Test</a>
+        <a href="german-level.html" class="nav-link">Stufen</a>
+        <a href="german-test.html" class="nav-link active">Test</a>
         <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle dark / light theme" title="Toggle theme">☀️</button>
     </div>
 </nav>
@@ -52,33 +52,33 @@
 <main class="test-view" id="testView">
 
     <div class="hero">
-        <div class="hero-eyebrow">⚡ Chango AI Assessment</div>
-        <h1>Find Your English <span class="gradient-text">Level</span></h1>
-        <p>Answer a few questions, write a short essay, and the AI will give your exact score and level instantly.</p>
+        <div class="hero-eyebrow">⚡ Chango KI-Bewertung</div>
+        <h1>Finde dein Deutsch <span class="gradient-text">Niveau</span></h1>
+        <p>Beantworte ein paar Fragen, schreibe einen kurzen Aufsatz, und die KI gibt dir sofort dein genaues Ergebnis und deine Stufe.</p>
         <div class="hero-chips">
-            <span class="chip">⏱ <b>~15 min</b></span>
-            <span class="chip">📋 <b>21</b> questions</span>
-            <span class="chip">🤖 <b>Instant</b> AI result</span>
+            <span class="chip">⏱ <b>~15 Min</b></span>
+            <span class="chip">📋 <b>21</b> Fragen</span>
+            <span class="chip">🤖 <b>KI-Ergebnis</b> sofort</span>
         </div>
     </div>
 
     <div class="test-bar">
         <div class="bar-left">
-            <span class="pill" id="answeredPill">Answered <b id="answeredNow">0</b>/<b id="answeredTotal">0</b></span>
+            <span class="pill" id="answeredPill">Beantwortet <b id="answeredNow">0</b>/<b id="answeredTotal">0</b></span>
             <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
         </div>
         <div style="display:flex;align-items:center;gap:0.7rem;">
             <span class="pill" id="timePill"><span id="timerText">15:00</span></span>
-            <button class="btn btn-primary bar-btn" onclick="submitTest()">Finish ✦</button>
-            <a href="index.html" class="btn btn-outline bar-btn exit-btn">Exit  ✕</a>
+            <button class="btn btn-primary bar-btn" onclick="submitTest()">Fertig ✦</button>
+            <a href="index.html" class="btn btn-outline bar-btn exit-btn">Verlassen  ✕</a>
         </div>
     </div>
 
     <div class="section-label">
         <div class="section-step">1</div>
         <div>
-            <div class="section-title">Grammar &amp; Vocabulary</div>
-            <div class="section-sub">Pick the correct answer for each question</div>
+            <div class="section-title">Grammatik &amp; Wortschatz</div>
+            <div class="section-sub">Wähle die richtige Antwort für jede Frage</div>
         </div>
         <div class="section-line"></div>
     </div>
@@ -87,8 +87,8 @@
     <div class="section-label">
         <div class="section-step">2</div>
         <div>
-            <div class="section-title">Reading Passage</div>
-            <div class="section-sub">Read the text, then answer 3 questions</div>
+            <div class="section-title">Lesetext</div>
+            <div class="section-sub">Lies den Text und beantworte dann 3 Fragen</div>
         </div>
         <div class="section-line"></div>
     </div>
@@ -97,37 +97,37 @@
     <div class="section-label">
         <div class="section-step">3</div>
         <div>
-            <div class="section-title">Mini Essay</div>
-            <div class="section-sub">Optional — write about a topic you know</div>
+            <div class="section-title">Kurzaufsatz</div>
+            <div class="section-sub">Optional — schreibe über ein Thema, das du kennst</div>
         </div>
         <div class="section-line"></div>
     </div>
     <div class="essay-card">
         <div class="prompt">
-            <b>Write a short essay (40–150 words).</b> Choose one topic: your career goals, a hobby you enjoy, or a trip you remember. Use full sentences and clear ideas — it helps the AI measure your writing level.
+            <b>Schreibe einen kurzen Aufsatz (40–150 Wörter).</b> Wähle ein Thema: deine Berufsziele, ein Hobby, das du gerne machst, oder eine Reise, die du in Erinnerung hast. Verwende vollständige Sätze und klare Ideen — das hilft der KI, dein Schreibniveau zu messen.
         </div>
-        <textarea id="essayArea" placeholder="Type your essay here..."></textarea>
+        <textarea id="essayArea" placeholder="Schreibe hier deinen Aufsatz..."></textarea>
         <div class="essay-foot">
             <div class="essay-chips"><span class="opt-badge">OPTIONAL</span></div>
-            <div id="essayStats">0 words</div>
+            <div id="essayStats">0 Wörter</div>
         </div>
     </div>
 </main>
 
 <div class="submit-bar">
-    <div class="answered">🧭 Answer all questions, then get your level &amp; score instantly.</div>
-    <button class="btn btn-primary submit-btn" onclick="submitTest()">Get My Level &amp; Score ✨</button>
+    <div class="answered">🧭 Beantworte alle Fragen und erhalte sofort dein Niveau &amp; Ergebnis.</div>
+    <button class="btn btn-primary submit-btn" onclick="submitTest()">Mein Niveau &amp; Ergebnis erhalten ✨</button>
 </div>
 
 <div class="error-toast" id="errorToast">
     <div class="err-icon">⚠️</div>
     <div>
-        <b>Almost there!</b>
-        <span class="err-text" id="errorToastText">You still have unanswered questions.</span>
+        <b>Fast geschafft!</b>
+        <span class="err-text" id="errorToastText">Du hast noch unbeantwortete Fragen.</span>
     </div>
 </div>
 
-<script src="app-data.js"></script>
+<script src="german-test-data.js"></script>
 <script>
     let testQuestions = [];
     let answers = [];
@@ -216,7 +216,7 @@
         let html = '<div class="passage-head">' +
                 '<div>' +
                     '<div class="passage-title">' + passage.title + '</div>' +
-                    '<div class="passage-meta">Read the passage, then answer the 3 questions below</div>' +
+                    '<div class="passage-meta">Lies den Text, beantworte dann die 3 Fragen unten</div>' +
                 '</div>' +
             '</div>' +
             '<div class="passage-body">' +
@@ -225,7 +225,7 @@
         passage.questions.forEach((rq, qi) => {
             html += '<div class="qcard" id="rqcard' + qi + '">' +
                 '<div class="qcard-top">' +
-                    '<div class="qnum">Reading ' + (qi + 1) + '</div>' +
+                    '<div class="qnum">Lesen ' + (qi + 1) + '</div>' +
                     '<span class="tag rd">Reading</span>' +
                 '</div>' +
                 '<div class="qtext">' + rq.q + '</div>' +
@@ -277,7 +277,7 @@
     }
 
     function analyzeEssay(text) {
-        const words = text.trim().match(/[a-zA-Z]+/g) || [];
+        const words = text.trim().match(/[a-zA-ZäöüÄÖÜß]+/g) || [];
         const count = words.length;
         const sentences = (text.match(/[.!?]+(\s|$)/g) || []).length;
         const lower = text.toLowerCase();
@@ -285,7 +285,7 @@
             const r = new RegExp('(\\s|^)' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(\\s|$|[,.!?;:])', 'g');
             return r.test(lower);
         }).length;
-        const connectors = ['however', 'therefore', 'although', 'for example', 'in addition', 'moreover', 'nevertheless', 'furthermore', 'finally', 'consequently', 'because', 'for instance', 'as a result'].filter(w => lower.includes(w)).length;
+        const connectors = ['jedoch', 'daher', 'obwohl', 'zum Beispiel', 'außerdem', 'darüber hinaus', 'trotzdem', 'ferner', 'schließlich', 'folglich', 'weil', 'beispielsweise', 'als Ergebnis'].filter(w => lower.includes(w)).length;
 
         let essayLevel = 'A1';
         if (count >= 300) essayLevel = 'C2';
@@ -357,12 +357,12 @@
         const items = [];
         testQuestions.forEach((q, i) => {
             if (answers[i] !== null && answers[i] !== q.correct) {
-                items.push({ section: 'Section 1 · Question ' + (i + 1), q: q.q, yours: q.options[answers[i]], correct: q.options[q.correct] });
+                items.push({ section: 'Abschnitt 1 · Frage ' + (i + 1), q: q.q, yours: q.options[answers[i]], correct: q.options[q.correct] });
             }
         });
         readingPassage.questions.forEach((rq, i) => {
             if (readingAnswers[i] !== null && readingAnswers[i] !== rq.correct) {
-                items.push({ section: 'Section 2 · Reading Question ' + (i + 1), q: rq.q, yours: rq.options[readingAnswers[i]], correct: rq.options[rq.correct] });
+                items.push({ section: 'Abschnitt 2 · Lesefrage ' + (i + 1), q: rq.q, yours: rq.options[readingAnswers[i]], correct: rq.options[rq.correct] });
             }
         });
         return items;
@@ -378,7 +378,7 @@
         if (missing.length) {
             const mcqMissing = missing.filter(id => id.indexOf('rqcard') !== 0).length;
             const readMissing = missing.length - mcqMissing;
-            let msg = 'You still have ' + missing.length + ' unanswered question' + (missing.length > 1 ? 's' : '') + ' (' + mcqMissing + ' in Section 1, ' + readMissing + ' in Section 2) — answer everything to see your result.';
+            let msg = 'Du hast noch ' + missing.length + ' unbeantwortete Frage' + (missing.length > 1 ? 'n' : '') + ' (' + mcqMissing + ' in Abschnitt 1, ' + readMissing + ' in Abschnitt 2) — beantworte alles, um dein Ergebnis zu sehen.';
             showError(msg);
 
             document.getElementById('answeredPill').style.borderColor = '#EF4444';
@@ -425,7 +425,7 @@
 
         try { localStorage.setItem('changoResult', JSON.stringify(result)); } catch (e) {}
 
-        window.location.href = 'result.html';
+        window.location.href = 'german-result.html';
     }
 
     testQuestions = buildTest();
@@ -441,8 +441,8 @@
 
     const essayArea = document.getElementById('essayArea');
     essayArea.addEventListener('input', () => {
-        const words = (essayArea.value.trim().match(/[a-zA-Z]+/g) || []).length;
-        document.getElementById('essayStats').textContent = words + ' words';
+        const words = (essayArea.value.trim().match(/[a-zA-ZäöüÄÖÜß]+/g) || []).length;
+        document.getElementById('essayStats').textContent = words + ' Wörter';
     });
 </script>
 
